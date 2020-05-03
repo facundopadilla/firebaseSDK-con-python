@@ -12,3 +12,4 @@ LIBRERIAS UTILIZADAS: requests, firebase-admin, Path
 
 - validaciones.py: a la hora de añadir elementos a nuestra base de datos, podemos modificar éstos métodos a nuestro gusto para mayor seguridad y robustez del programa, así evitamos añadir valores erróneos a nuestra BD
 
+- carpeta "autenticacion": ahí tienen que añadir su archivo .JSON para poder utilizar el programa
