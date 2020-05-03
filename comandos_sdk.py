@@ -11,18 +11,16 @@ def propiedadesConexion(conexion):
     """)
 
 # obtenerBD me muestra todo lo que encuentra en la raíz de la base de datos, por eso el '/', que hace referencia a la raíz 
-def obtenerBD(conexion):
+def obtenerBD():
     print("\n--- Bases de datos ---\n")
-    bases = [i for i in db.reference('/').get()]
-    for i,base in enumerate(bases):
-        print(f"[{i}] {base}")
-        for j,dato in enumerate(db.reference('/'+str(base)+'/').get()):
-            print(f"\t[{j}] {dato}")
+    for i,token in enumerate(db.reference('/').get()):
+        print(f"[{i}] {token}")
+        for j,value in enumerate(db.reference('/'+token).get()):
+            print(f"\t[{j}] {value}:{db.reference('/'+token+'/'+value).get()}")
 
-             #TODO---
-
+            
 # editarBD me permite añadir, eliminar y/o editar algun valor en específico de la base de datos, ref es acrónimo de "referencia".
-def editarBD(conexion):
+def editarBD():
     while(True):
         print("""\n\t--- Edición de la base de datos ---
 [1] Añadir 
@@ -31,15 +29,10 @@ def editarBD(conexion):
 [4] Volver""")
         opcion = input("\n>>> Selecionar una opción: ")
         if opcion == "1":
-            nombre = ingresarNombre()
-            apellido = ingresarApellido()
-            edad = ingresarEdad()
+            addBD() # validaciones.py
         elif opcion == "2":
-            break
-            #TODO
+            modificarBD() # validaciones.py
         elif opcion == "3":
-            pass
-            #TODO
+            eliminarBD() # validaciones.py
         elif opcion == "4":
-            pass
-            #TODO
+            break
