@@ -1,3 +1,6 @@
+# @author: facundopadilla
+# @linkedin: https://www.linkedin.com/in/facundopadilla/
+
 # Inicio de ejecución
 from menu import menu
 
